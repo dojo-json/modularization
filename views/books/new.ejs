@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>New Book</title>
+</head>
+<body>
+  <nav>
+    <a href="/books">Back</a>
+  </nav>
+
+  <fieldset>
+    <legend>New Book</legend>
+    <form action="/books" method='post'>
+      <div>
+        <label for="">title</label>
+        <input type="text" name='title'>
+      </div>
+      <div>
+        <label for="">publisher</label>
+        <input type="text" name='publisher'>
+      </div>
+      <div>
+        <label for="">pages</label>
+        <input type="number" name='pages'>
+      </div>
+      <div>
+        <label for="">year</label>
+        <input type="number" name='year'>
+      </div>
+      <div>
+        <label for="">genre</label>
+        <input type="text" name='genre'>
+      </div>
+      <div>
+        <label for="">Author</label>
+        <select name="author" id="">
+          <% for (const author of authors) { %>
+            <option value="<%= author._id %>"><%= author.name %></option>
+          <% } %>
+        </select>
+      </div>
+
+      <button>New Book</button>
+    </form>
+  </fieldset>
+</body>
+</html>

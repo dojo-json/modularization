@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Edit Author</title>
+</head>
+<body>
+  <nav>
+    <a href="/authors">Back</a>
+  </nav>
+
+  <fieldset>
+    <legend>Edit Author</legend>
+
+    <form action="/authors/<%= author._id %>/update" method='post'>
+      <div>
+        <label for="">Name</label>
+        <input type="text" name='name' value='<%= author.name %>' required>
+      </div>
+      <div>
+        <label for="">Age</label>
+        <input type="number" name='age' value='<%= author.age %>' required>
+      </div>
+      <div>
+        <label for="">Alive?</label>
+        <input type="radio" name='isAlive' value='true' checked>True
+        <input type="radio" name='isAlive' value='false'>False
+      </div>
+
+      <button>Submit</button>
+    </form>
+  </fieldset>
+</body>
+</html>
